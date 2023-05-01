@@ -17,7 +17,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     // Comprobacion de la contraseña introducida por el usuario y la almacenada en la base de datos
     $verify = password_verify($password, $usuario['password']);
 
-    $mensaje = "ERROR CONTRASENYA INCORRECTE";
+    $mensaje = "CONTRASENYA INCORRECTE";
 
     // Si los resultados (count) son mayores a cero y la contraseña se verifica ...
     if(count($usuario) > 0 && $verify){
