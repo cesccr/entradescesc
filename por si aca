@@ -1,0 +1,72 @@
+<!-- Mensaje que se muestra en caso de que exista la sesión -->
+<?php if(isset($_SESSION['id_usuario'])) : ?>
+    <div class="lg-exito">HOLA! 
+    <span id="lg-correo"> <?= $_SESSION['id_usuario']['email'] ?> </span><br>
+    Has iniciat sessió correctament
+    <a href="logout.php" id="logout">Tancar sessió</a>
+    </div>
+<?php endif; ?>
+    <div class="div-imagen-fondo">
+        <h3>Pàgina en actualització</h3>
+        <a href="prova.html">Link de prova</a>
+      </div>
+
+
+
+
+
+
+      <?php
+    session_start();
+
+    require_once 'includes/conexion.php';
+
+    // Si existe la sesion el email dentro de la sesión id_usuario se realiza la consulta a la base de datos
+    if(isset($_SESSION['id_usuario']['email'])){
+        $email = $_SESSION['id_usuario']['email'];
+
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+        $login = mysqli_query($db, $sql);
+
+        $usuario = mysqli_fetch_assoc($login);
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<style>
+        body {
+            background-image: url(img/titulo.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #FFFFFF;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pàgina entrades a espectacles</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <?php require_once 'includes/cabecera.php' ?>
+
+    <!-- Mensaje que se muestra en caso de que exista la sesión -->
+    <?php if(isset($_SESSION['id_usuario'])) : ?>
+        <div class="lg-exito">Benvingut 
+        <span id="lg-correo"> <?= $_SESSION['id_usuario']['email'] ?> </span>
+        Has iniciat sessió amb èxit!
+        <a href="logout.php" id="logout">Tancar sessió</a>
+        </div>
+    <?php endif; ?>
+
+    <h1>Registra't o accedeix amb el seu compte</h1>
+
+    <div id="enlaces">
+        <a href="login.php">Iniciar sessió</a>
+        <a href="singup.php">Registrar-se</a>
+    </div>
+    
+    <?php require_once 'includes/footer.php' ?>
