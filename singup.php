@@ -60,7 +60,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     <form id="registro" action="singup.php" method="POST">
         <label for="nombre" id="login-nombre">Nom</label>
         <input type="text" name="nombre" id=i-nombre placeholder="Introdueix un nom">
-        <label for="email" id="login-email">Email</label>
+        <label for="email" id="login-email">email</label>
         <input type="email" name="email" id="i-email" placeholder="Introdueix el teu email">
         <label for="password" id="login-pass">Contrasenya</label>
         <input type="password" name="password" id="i-pass" placeholder="Introdueix la teva contrasenya">

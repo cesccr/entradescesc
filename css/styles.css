@@ -93,7 +93,7 @@ span a:hover{
     grid-gap: 15px;
     margin-top: 40px;
     grid-template-areas: 
-        "label-email email"
+        "label-price price"
         "label-pass pass"
         "submit submit";
 }
@@ -103,8 +103,8 @@ span a:hover{
     font-size: 25px;
 }
 
-#id_email{
-    grid-area: label-email;
+#id_price{
+    grid-area: label-price;
 }
 
 
@@ -112,9 +112,9 @@ span a:hover{
     grid-area: label-pass;
 }
 
-input[type="email"]{
+input[type="price"]{
     width: 70%;
-    grid-area: email;
+    grid-area: price;
 }
 
 input[type="password"]{
@@ -146,8 +146,8 @@ input[type="submit"]:hover{
     grid-gap: 15px;
     margin-top: 40px;
     grid-template-areas: 
-        "lg-name in-nombre"
-        "lg-email in-email"
+        "lg-nmaes in-nombre"
+        "lg-price in-price"
         "lg-pass in-pass"
         "btn-registro btn-registro";
 }
@@ -158,12 +158,12 @@ input[type="submit"]:hover{
 }
 
 #login-nombre{
-    grid-area: lg-name;
+    grid-area: lg-nmaes;
     font-size: 25px;
 }
 
-#login-email{
-    grid-area: lg-email;
+#login-price{
+    grid-area: lg-price;
     font-size: 25px;
 }
 
@@ -178,9 +178,9 @@ input[type="submit"]:hover{
     font-size: 20px;
 }
 
-#i-email{
+#i-price{
     width: 70%;
-    grid-area: in-email;
+    grid-area: in-price;
     font-size: 20px;
 }
 

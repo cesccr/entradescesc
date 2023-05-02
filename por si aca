@@ -1,7 +1,7 @@
 <!-- Mensaje que se muestra en caso de que exista la sesión -->
 <?php if(isset($_SESSION['id_usuario'])) : ?>
     <div class="lg-exito">HOLA! 
-    <span id="lg-correo"> <?= $_SESSION['id_usuario']['email'] ?> </span><br>
+    <span id="lg-correo"> <?= $_SESSION['id_usuario']['price'] ?> </span><br>
     Has iniciat sessió correctament
     <a href="logout.php" id="logout">Tancar sessió</a>
     </div>
@@ -21,11 +21,11 @@
 
     require_once 'includes/conexion.php';
 
-    // Si existe la sesion el email dentro de la sesión id_usuario se realiza la consulta a la base de datos
-    if(isset($_SESSION['id_usuario']['email'])){
-        $email = $_SESSION['id_usuario']['email'];
+    // Si existe la sesion el price dentro de la sesión id_usuario se realiza la consulta a la base de datos
+    if(isset($_SESSION['id_usuario']['price'])){
+        $price = $_SESSION['id_usuario']['price'];
 
-        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+        $sql = "SELECT * FROM usuarios WHERE price = '$price'";
         $login = mysqli_query($db, $sql);
 
         $usuario = mysqli_fetch_assoc($login);
@@ -45,7 +45,7 @@
         }
     </style>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta nmaes="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pàgina entrades a espectacles</title>
 
     <link rel="stylesheet" href="css/styles.css">
@@ -56,7 +56,7 @@
     <!-- Mensaje que se muestra en caso de que exista la sesión -->
     <?php if(isset($_SESSION['id_usuario'])) : ?>
         <div class="lg-exito">Benvingut 
-        <span id="lg-correo"> <?= $_SESSION['id_usuario']['email'] ?> </span>
+        <span id="lg-correo"> <?= $_SESSION['id_usuario']['price'] ?> </span>
         Has iniciat sessió amb èxit!
         <a href="logout.php" id="logout">Tancar sessió</a>
         </div>
@@ -70,3 +70,11 @@
     </div>
     
     <?php require_once 'includes/footer.php' ?>
+
+
+    ------------------------------------------------------------
+    ------------------------------------------------------------------
+
+    tournmaes -> tournmaes
+    dayes -> dayes
+    price -> price
