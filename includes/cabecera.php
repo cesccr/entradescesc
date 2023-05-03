@@ -1,3 +1,3 @@
 <header>
-    <a href="">ENTRADES A ESPECTACLES</a>
+    <a href="index.php">ENTRADES A ESPECTACLES</a>
 </header>

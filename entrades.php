@@ -15,6 +15,7 @@
 ?>
 <html>
 	<head>
+  <link rel="stylesheet" href="css/styles.css">
   <!-- <style>
         body {
             background-image: url(img/portada.jpg);
@@ -36,7 +37,7 @@
 		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>
-	<?php include "php/navbar.php"; ?>
+	<?php require_once 'includes/cabecera.php' ?>
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Gestió Usuari
   </button>
@@ -62,27 +63,27 @@
         <div class="modal-body">
 <form role="form" method="post" action="php/agregar.php">
   <div class="form-group">
-    <label for="name">Nombre</label>
+    <label for="name">Artistaaaaa</label>
     <input type="text" class="form-control" name="name" required>
   </div>
   <div class="form-group">
-    <label for="lastname">Apellido</label>
+    <label for="lastname">Tour</label>
     <input type="text" class="form-control" name="lastname" required>
   </div>
   <div class="form-group">
-    <label for="address">Domicilio</label>
+    <label for="address">Ciutat</label>
     <input type="text" class="form-control" name="address" required>
   </div>
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email">Data Concert</label>
     <input type="email" class="form-control" name="email" >
   </div>
   <div class="form-group">
-    <label for="phone">Telefono</label>
+    <label for="phone">Preu</label>
     <input type="text" class="form-control" name="phone" >
   </div>
 
-  <button type="submit" class="btn btn-default">Agregar</button>
+  <button type="submit" class="btn btn-default">Afegir</button>
 </form>
         </div>
 

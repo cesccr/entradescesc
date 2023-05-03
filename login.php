@@ -1,6 +1,7 @@
 <?php
 
-// Cal iniciar la sessió abans de crear-la (línia 23)session_start();
+// Cal iniciar la sessió abans de crear-la (línia 23)
+session_start();
 
 require_once 'includes/conexion.php';
 
@@ -13,16 +14,20 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 
     $usuario = mysqli_fetch_assoc($login);
 
-// Comprovació de la contrasenya introduïda per l'usuari i l'emmagatzemada a la base de dades    $verify = password_verify($password, $usuario['password']);
+    // Comprovació de la contrasenya introduïda per l'usuari i l'emmagatzemada a la base de dades
+    $verify = password_verify($password, $usuario['password']);
 
     $mensaje = "ERROR CONTRASENYA INCORRECTE";
 
-// Si els resultats (count) són majors a zero i la contrasenya es verifica ...    if(count($usuario) > 0 && $verify){
-// Emmagatzemem aquest nou usuari en una sessió activa perquè navegui        $_SESSION['id_usuario'] = $usuario;
+    // Si els resultats (count) són més grans a zero i la contrasenya es verifica ...
+    if(count($usuario) > 0 && $verify){
+        // Emmagatzemem aquest nou usuari en una sessió activa perquè navegui
+        $_SESSION['id_usuario'] = $usuario;
         header('Location: entrades.php');
     }else{
         $mensaje = "Error,dades incorrectes";
     }
+}
 ?>
 
 
@@ -48,7 +53,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 
     <?php require_once 'includes/cabecera.php' ?>
 
-<!-- Missatge a imprimir en cas d'error el login -->
+    <!-- Mensaje a imprimir en caso de que de error el login -->
     <?php if(!empty($mensaje)) : ?>
         <p id="error"> <?= $mensaje ?> </p>
     <?php endif; ?>
