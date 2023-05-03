@@ -23,7 +23,6 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     }else{
         $mensaje = "Error,dades incorrectes";
     }
-}
 ?>
 
 

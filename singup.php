@@ -18,9 +18,11 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     // Desem aquest nou usuari a la base de dades
     $guardar = mysqli_query($db, $sql);
 
-// Si la consulta ha tingut èxit mostrem el missatge, en cas contrari es mostra lerror    if($guardar){
+// Si la consulta ha tingut èxit mostrem el missatge, en cas contrari es mostra lerror
+    if($guardar){
         $mensaje = "Registrat amb èxit!";
-    }else{
+    }
+    else{
         $mensaje = "ERROR AL REGISTRAR-SE";
     }
 }
