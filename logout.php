@@ -1,15 +1,15 @@
 <?php 
 
-    // Iniciamos la sesion
+    // Iniciem la sessio
     session_start();
 
-    // Borramos la sesion
+    // Borrem la sessio
     session_unset();
 
-    // Destruimos la sesion
+    // Destruim la sessio
     session_destroy();
 
-    // Redirección
+    // Redirecció
     header('Location: index.php');
 
 ?>

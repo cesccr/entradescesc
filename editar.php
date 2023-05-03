@@ -6,13 +6,13 @@
 		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>
-	<?php include "navbar.php"; ?>
+	<?php include "php/navbar.php"; ?>
 <div class="container">
 <div class="row">
 <div class="col-md-6">
 		<h2>EDITAR</h2>
 
-<?php include "formulario.php";?>
+<?php include "php/formulario.php";?>
 
 </div>
 </div>

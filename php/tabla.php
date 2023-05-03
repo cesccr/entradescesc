@@ -3,7 +3,7 @@
 include "conexion.php";
 
 $user_id=null;
-$sql1= "select * from person where nmaes like '%$_GET[s]%' or tournmaes like '%$_GET[s]%' or address like '%$_GET[s]%' or price like '%$_GET[s]%' or dayes like '%$_GET[s]%' ";
+$sql1= "select * from person";
 $query = $con->query($sql1);
 ?>
 
@@ -12,18 +12,18 @@ $query = $con->query($sql1);
 <thead>
 	<th>Nombre</th>
 	<th>Apellido</th>
-	<th>price</th>
+	<th>Email</th>
 	<th>Direccion</th>
 	<th>Telefono</th>
 	<th></th>
 </thead>
 <?php while ($r=$query->fetch_array()):?>
 <tr>
-	<td><?php echo $r["nmaes"]; ?></td>
-	<td><?php echo $r["tournmaes"]; ?></td>
-	<td><?php echo $r["price"]; ?></td>
+	<td><?php echo $r["name"]; ?></td>
+	<td><?php echo $r["lastname"]; ?></td>
+	<td><?php echo $r["email"]; ?></td>
 	<td><?php echo $r["address"]; ?></td>
-	<td><?php echo $r["dayes"]; ?></td>
+	<td><?php echo $r["phone"]; ?></td>
 	<td style="width:150px;">
 		<a href="./editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
 		<a href="#" id="del-<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
@@ -32,7 +32,7 @@ $query = $con->query($sql1);
 			e.preventDefault();
 			p = confirm("Estas seguro?");
 			if(p){
-				window.location="./eliminar.php?id="+<?php echo $r["id"];?>;
+				window.location="./php/eliminar.php?id="+<?php echo $r["id"];?>;
 
 			}
 

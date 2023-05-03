@@ -1,7 +1,6 @@
 <?php
 
-// Necesario iniciar la sesion antes de crearla (linea 23)
-session_start();
+// Cal iniciar la sessió abans de crear-la (línia 23)session_start();
 
 require_once 'includes/conexion.php';
 
@@ -14,18 +13,15 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 
     $usuario = mysqli_fetch_assoc($login);
 
-    // Comprobacion de la contraseña introducida por el usuario y la almacenada en la base de datos
-    $verify = password_verify($password, $usuario['password']);
+// Comprovació de la contrasenya introduïda per l'usuari i l'emmagatzemada a la base de dades    $verify = password_verify($password, $usuario['password']);
 
-    $mensaje = "CONTRASENYA INCORRECTE";
+    $mensaje = "ERROR CONTRASENYA INCORRECTE";
 
-    // Si los resultados (count) son mayores a cero y la contraseña se verifica ...
-    if(count($usuario) > 0 && $verify){
-        // Almacenamos a ese nuevo usuario en una sesion activa para que navegue
-        $_SESSION['id_usuario'] = $usuario;
+// Si els resultats (count) són majors a zero i la contrasenya es verifica ...    if(count($usuario) > 0 && $verify){
+// Emmagatzemem aquest nou usuari en una sessió activa perquè navegui        $_SESSION['id_usuario'] = $usuario;
         header('Location: entrades.php');
     }else{
-        $mensaje = "Lo sentimos, sus datos son incorrectos";
+        $mensaje = "Error,dades incorrectes";
     }
 }
 ?>
@@ -53,7 +49,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 
     <?php require_once 'includes/cabecera.php' ?>
 
-    <!-- Mensaje a imprimir en caso de que de error el login -->
+<!-- Missatge a imprimir en cas d'error el login -->
     <?php if(!empty($mensaje)) : ?>
         <p id="error"> <?= $mensaje ?> </p>
     <?php endif; ?>
@@ -62,7 +58,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     <span>o <a href="singup.php" id="btnregister">Registrar-se</a></span>
 
     <form id="login" action="login.php" method="POST">
-        <label for="email" id="id_email">email</label>
+        <label for="email" id="id_email">Email</label>
         <input type="email" name="email" placeholder="Introdueix el teu correu electrònic">
         <label for="password" id="id_pass">Contrasenya</label>
         <input type="password" name="password" placeholder="Introdueix la teva contrasenya">
