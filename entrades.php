@@ -41,6 +41,8 @@
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Gestió Usuari
   </button>
+  <br>
+  <br>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="usuari.php">Gestio del meu compte</a>
     <a class="dropdown-item" href="logout.php">Tancar Sessió</a>
@@ -50,20 +52,20 @@
 <div class="col-md-12">
 		<h2>ESPECTACLES RECENTS</h2>
 <!-- Button trigger modal -->
-  <a data-toggle="modal" href="#myModal" class="btn btn-default">Afegir espectacle</a>
+  <a data-toggle="modal" href="#myModal" class="btn btn-primary">Afegir espectacle</a>
 <br><br>
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Agregar</h4>
+          
+          <h4 class="modal-title">NOU ESPECTACLE</h4>
         </div>
         <div class="modal-body">
 <form role="form" method="post" action="php/agregar.php">
   <div class="form-group">
-    <label for="name">Artistaaaaa</label>
+    <label for="name">Artista</label>
     <input type="text" class="form-control" name="name" required>
   </div>
   <div class="form-group">
@@ -76,14 +78,14 @@
   </div>
   <div class="form-group">
     <label for="email">Data Concert</label>
-    <input type="email" class="form-control" name="email" >
+    <input type="text" class="form-control" name="email" >
   </div>
   <div class="form-group">
     <label for="phone">Preu</label>
     <input type="text" class="form-control" name="phone" >
   </div>
-
-  <button type="submit" class="btn btn-default">Afegir</button>
+<br>
+  <button type="submit" class="btn btn-success">Afegir</button>
 </form>
         </div>
 

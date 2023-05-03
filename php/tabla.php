@@ -10,11 +10,11 @@ $query = $con->query($sql1);
 <?php if($query->num_rows>0):?>
 <table class="table table-bordered table-hover">
 <thead>
-	<th>Nombre</th>
-	<th>Apellido</th>
-	<th>Email</th>
-	<th>Direccion</th>
-	<th>Telefono</th>
+	<th>Artista</th>
+	<th>Tour</th>
+	<th>Ciutat</th>
+	<th>Data concert</th>
+	<th>Preu</th>
 	<th></th>
 </thead>
 <?php while ($r=$query->fetch_array()):?>
@@ -24,9 +24,10 @@ $query = $con->query($sql1);
 	<td><?php echo $r["email"]; ?></td>
 	<td><?php echo $r["address"]; ?></td>
 	<td><?php echo $r["phone"]; ?></td>
-	<td style="width:150px;">
+	<td style="width:220px;">
 		<a href="./editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
 		<a href="#" id="del-<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
+		<a href="./veureconcerts.php" class="btn btn-info">Veure</a>
 		<script>
 		$("#del-"+<?php echo $r["id"];?>).click(function(e){
 			e.preventDefault();
