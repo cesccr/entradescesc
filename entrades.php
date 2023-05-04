@@ -13,8 +13,10 @@
         $usuario = mysqli_fetch_assoc($login);
     }
 ?>
+
 <html>
 	<head>
+    
   <link rel="stylesheet" href="css/styles.css">
   <!-- <style>
         body {
@@ -56,6 +58,7 @@
 <!-- Button trigger modal -->
   <a data-toggle="modal" href="#myModal" class="btn btn-primary">Afegir espectacle</a>
 <br><br>
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -88,35 +91,42 @@
   </div>
 <br>
   <button type="submit" class="btn btn-success">Afegir</button>
+  
 </form>
         </div>
 
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-
-<!-- // $num_registros_por_pagina = 5;
-// $sql_total_registros = "SELECT COUNT(*) as total_registros FROM espectacles";
-// $query_total_registros = mysqli_query($db, $sql_total_registros);
-// $row_total_registros = mysqli_fetch_assoc($query_total_registros);
-// $num_total_registros = $row_total_registros['total_registros'];
-// $num_total_paginas = ceil($num_total_registros / $num_registros_por_pagina);
-// $page_actual = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
-// if($page_actual < 1){
-// $page_actual = 1;
-// }
-
-// if($page_actual > $num_total_paginas){
-// $page_actual = $num_total_paginas;
-// }
-// $offset = ($page_actual - 1) * $num_registros_por_pagina;
-
-// $sql_espectacles = "SELECT * FROM espectacles LIMIT $num_registros_por_pagina OFFSET $offset";
-// $query_espectacles = mysqli_query($db, $sql_espectacles);
-//  -->
+  
 
 <?php include "php/tabla.php"; ?>
+<?php
+$per_page = 2;
+$result = mysqli_query($con, "SELECT COUNT(*) AS count FROM artistes");
+$row = mysqli_fetch_assoc($result);
+$total_rows = $row['count'];
+$total_pages = ceil($total_rows / $per_page);
+$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+$offset = ($current_page - 1) * $per_page;
+$sql = "SELECT * FROM artistes LIMIT $offset, $per_page";
+echo "<ul class='pagination'>";
+if ($current_page > 1) {
+    echo "<li class='page-item'><a class='page-link' href='?page=".($current_page - 1)."'>Anterior</a></li>";
+}
+for ($i = 1; $i <= $total_pages; $i++) {
+    if ($i == $current_page) {
+        echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
+    } else {
+        echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
+    }
+}
+if ($current_page < $total_pages) {
+    echo "<li class='page-item'><a class='page-link' href='?page=".($current_page + 1)."'>Siguiente</a></li>";
+}
+echo "</ul>";
+
+?>
 </div>
 </div>
 </div>
@@ -125,5 +135,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
   </body>
 </html>
+
