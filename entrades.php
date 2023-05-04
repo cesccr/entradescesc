@@ -101,32 +101,6 @@
   
 
 <?php include "php/tabla.php"; ?>
-<?php
-$per_page = 2;
-$result = mysqli_query($con, "SELECT COUNT(*) AS count FROM artistes");
-$row = mysqli_fetch_assoc($result);
-$total_rows = $row['count'];
-$total_pages = ceil($total_rows / $per_page);
-$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-$offset = ($current_page - 1) * $per_page;
-$sql = "SELECT * FROM artistes LIMIT $offset, $per_page";
-echo "<ul class='pagination'>";
-if ($current_page > 1) {
-    echo "<li class='page-item'><a class='page-link' href='?page=".($current_page - 1)."'>Anterior</a></li>";
-}
-for ($i = 1; $i <= $total_pages; $i++) {
-    if ($i == $current_page) {
-        echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
-    } else {
-        echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
-    }
-}
-if ($current_page < $total_pages) {
-    echo "<li class='page-item'><a class='page-link' href='?page=".($current_page + 1)."'>Siguiente</a></li>";
-}
-echo "</ul>";
-
-?>
 </div>
 </div>
 </div>
@@ -135,7 +109,14 @@ echo "</ul>";
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+    <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
 
