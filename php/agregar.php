@@ -1,16 +1,16 @@
 <?php
 
 if(!empty($_POST)){
-	if(isset($_POST["name"]) &&isset($_POST["lastname"]) &&isset($_POST["email"]) &&isset($_POST["address"]) &&isset($_POST["phone"])){
-		if($_POST["name"]!=""&& $_POST["lastname"]!=""&&$_POST["address"]!=""){
+	if(isset($_POST["name"]) &&isset($_POST["album"]) &&isset($_POST["date"]) &&isset($_POST["city"]) &&isset($_POST["preu"])){
+		if($_POST["name"]!=""&& $_POST["album"]!=""&&$_POST["city"]!=""){
 			include "conexion.php";
 			
-			$sql = "insert into person(name,lastname,email,address,phone,created_at) value (\"$_POST[name]\",\"$_POST[lastname]\",\"$_POST[email]\",\"$_POST[address]\",\"$_POST[phone]\",NOW())";
+			$sql = "insert into artistes(name,album,date,city,preu,created_at) value (\"$_POST[name]\",\"$_POST[album]\",\"$_POST[date]\",\"$_POST[city]\",\"$_POST[preu]\",NOW())";
 			$query = $con->query($sql);
 			if($query!=null){
-				print "<script>alert(\"Agregado exitosamente.\");window.location='../entrades.php';</script>";
+				print "<script>alert(\"Afegit correctament.\");window.location='../entrades.php';</script>";
 			}else{
-				print "<script>alert(\"No se pudo agregar.\");window.location='../entrades.php';</script>";
+				print "<script>alert(\"No s'ha pogut afegir.\");window.location='../entrades.php';</script>";
 
 			}
 		}

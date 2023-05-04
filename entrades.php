@@ -41,12 +41,14 @@
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Gestió Usuari
   </button>
+  <a href="dataes.php" class="btn btn-info">Dates Espectacles</a>
   <br>
   <br>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="usuari.php">Gestio del meu compte</a>
     <a class="dropdown-item" href="logout.php">Tancar Sessió</a>
   </div>
+  
 <div class="container">
 <div class="row">
 <div class="col-md-12">
@@ -69,20 +71,20 @@
     <input type="text" class="form-control" name="name" required>
   </div>
   <div class="form-group">
-    <label for="lastname">Tour</label>
-    <input type="text" class="form-control" name="lastname" required>
+    <label for="album">Albúm</label>
+    <input type="text" class="form-control" name="album" required>
   </div>
   <div class="form-group">
-    <label for="address">Ciutat</label>
-    <input type="text" class="form-control" name="address" required>
+    <label for="date">Data Concert</label>
+    <input type="text" class="form-control" name="date" required>
   </div>
   <div class="form-group">
-    <label for="email">Data Concert</label>
-    <input type="text" class="form-control" name="email" >
+    <label for="city">Ciutat</label>
+    <input type="text" class="form-control" name="city" >
   </div>
   <div class="form-group">
-    <label for="phone">Preu</label>
-    <input type="text" class="form-control" name="phone" >
+    <label for="preu">Preu</label>
+    <input type="text" class="form-control" name="preu" >
   </div>
 <br>
   <button type="submit" class="btn btn-success">Afegir</button>
@@ -93,6 +95,26 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
+<!-- // $num_registros_por_pagina = 5;
+// $sql_total_registros = "SELECT COUNT(*) as total_registros FROM espectacles";
+// $query_total_registros = mysqli_query($db, $sql_total_registros);
+// $row_total_registros = mysqli_fetch_assoc($query_total_registros);
+// $num_total_registros = $row_total_registros['total_registros'];
+// $num_total_paginas = ceil($num_total_registros / $num_registros_por_pagina);
+// $page_actual = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+// if($page_actual < 1){
+// $page_actual = 1;
+// }
+
+// if($page_actual > $num_total_paginas){
+// $page_actual = $num_total_paginas;
+// }
+// $offset = ($page_actual - 1) * $num_registros_por_pagina;
+
+// $sql_espectacles = "SELECT * FROM espectacles LIMIT $num_registros_por_pagina OFFSET $offset";
+// $query_espectacles = mysqli_query($db, $sql_espectacles);
+//  -->
 
 <?php include "php/tabla.php"; ?>
 </div>

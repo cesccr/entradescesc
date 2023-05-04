@@ -1,8 +1,8 @@
 
 <html>
 	<head>
-		<title>.: CRUD :.</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<title>EDITAR</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>

@@ -2,42 +2,42 @@
 include "conexion.php";
 
 $user_id=null;
-$sql1= "select * from person where id = ".$_GET["id"];
+$sql1= "select * from artistes where id = ".$_GET["id"];
 $query = $con->query($sql1);
-$person = null;
+$artistes = null;
 if($query->num_rows>0){
 while ($r=$query->fetch_object()){
-  $person=$r;
+  $artistes=$r;
   break;
 }
 
   }
 ?>
 
-<?php if($person!=null):?>
+<?php if($artistes!=null):?>
 
 <form role="form" method="post" action="php/actualizar.php">
   <div class="form-group">
-    <label for="name">Nombre</label>
-    <input type="text" class="form-control" value="<?php echo $person->name; ?>" name="name" required>
+    <label for="name">Nom Artista</label>
+    <input type="text" class="form-control" value="<?php echo $artistes->name; ?>" name="name" required>
   </div>
   <div class="form-group">
-    <label for="lastname">Apellido</label>
-    <input type="text" class="form-control" value="<?php echo $person->lastname; ?>" name="lastname" required>
+    <label for="album">Album</label>
+    <input type="text" class="form-control" value="<?php echo $artistes->album; ?>" name="album" required>
   </div>
   <div class="form-group">
-    <label for="address">Domicilio</label>
-    <input type="text" class="form-control" value="<?php echo $person->address; ?>" name="address" required>
+    <label for="date">Data del concert</label>
+    <input type="text" class="form-control" value="<?php echo $artistes->date; ?>" name="date" required>
   </div>
   <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" value="<?php echo $person->email; ?>" name="email" >
+    <label for="city">Ciutat</label>
+    <input type="text" class="form-control" value="<?php echo $artistes->city; ?>" name="city" >
   </div>
   <div class="form-group">
-    <label for="phone">Telefono</label>
-    <input type="text" class="form-control" value="<?php echo $person->phone; ?>" name="phone" >
+    <label for="preu">Preu</label>
+    <input type="text" class="form-control" value="<?php echo $artistes->preu; ?>" name="preu" >
   </div>
-<input type="hidden" name="id" value="<?php echo $person->id; ?>">
+<input type="hidden" name="id" value="<?php echo $artistes->id; ?>">
   <button type="submit" class="btn btn-default">Actualizar</button>
 </form>
 <?php else:?>

@@ -70,3 +70,40 @@
     </div>
     
     <?php require_once 'includes/footer.php' ?>
+
+
+    -----------------------------------
+    -----------------------------------
+    -------------------------------------------------------
+
+
+
+    CREATE TABLE artistas (
+  id INT NOT NULL AUTO_INCREMENT,
+  nombre_artista VARCHAR(255),
+  album VARCHAR(255),
+  fecha_concierto DATE,
+  ciudad_concierto VARCHAR(255),
+  precio_concierto DECIMAL(10,2),
+  PRIMARY KEY (id)
+);
+
+ ('Coldplay', 'Everyday Life', '2023-06-01', 'Madrid', 75.50);
+
+ ('Ariana Grande', 'Positions', '2023-07-15', 'Barcelona', 85.00);
+
+ ('The Weeknd', 'After Hours', '2023-08-22', 'Paris', 95.25);
+
+ ('Ed Sheeran', '÷', '2023-09-05', 'New York', 65.75);
+
+ ('Beyoncé', 'Lemonade', '2023-10-12', 'London', 120.00);
+
+ ('Travis Scott', 'Astroworld', '2023-11-18', 'Los Angeles', 105.50);
+
+ ('Taylor Swift', 'Red (Taylor\'s Version)', '2023-12-25', 'Sydney', 90.25);
+
+ ('Drake', 'Certified Lover Boy', '2024-01-15', 'Toronto', 80.00);
+
+ ('Billie Eilish', 'Happier Than Ever', '2024-02-20', 'Berlin', 75.75);
+
+ ('Post Malone', 'Hollywood\'s Bleeding', '2024-03-10', 'Tokyo', 95.50);
