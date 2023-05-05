@@ -18,15 +18,7 @@
 	<head>
     
   <link rel="stylesheet" href="../css/styles.css">
-  <!-- <style>
-        body {
-            background-image: url(img/portada.jpg);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            color: #FFFFFF;
-        }
-    </style> -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
