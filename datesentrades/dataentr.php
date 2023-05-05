@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once 'includes/conexion.php';
+    require_once '../includes/conexion.php';
 
     // Si existe la sesion el email dentro de la sesión id_usuario se realiza la consulta a la base de datos
     if(isset($_SESSION['id_usuario']['email'])){
@@ -17,7 +17,7 @@
 <html>
 	<head>
     
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
   <!-- <style>
         body {
             background-image: url(img/portada.jpg);
@@ -35,20 +35,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </div>
 		<title>ENTRADES A ESPECTACLES</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+		<script src="../js/jquery.min.js"></script>
 	</head>
 	<body>
-	<?php require_once 'includes/cabecera.php' ?>
+	<?php require_once '../includes/cabecera.php' ?>
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Gestió Usuari
   </button>
-  <a href="datesentrades/dataentr.php" class="btn btn-info">Dates Espectacles</a>
   <br>
   <br>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="usuari.php">Gestio del meu compte</a>
-    <a class="dropdown-item" href="logout.php">Tancar Sessió</a>
+    <a class="dropdown-item" href="../usuari.php">Gestio del meu compte</a>
+    <a class="dropdown-item" href="../logout.php">Tancar Sessió</a>
   </div>
   
 <div class="container">
@@ -68,22 +67,22 @@
           <h4 class="modal-title">NOU ESPECTACLE</h4>
         </div>
         <div class="modal-body">
-<form role="form" method="post" action="php/agregar.php">
+<form role="form" method="post" action="agregar.php">
   <div class="form-group">
-    <label for="name">Artista</label>
+    <label for="name">Mes del espectacle</label>
     <input type="text" class="form-control" name="name" required>
   </div>
   <div class="form-group">
-    <label for="album">Albúm</label>
-    <input type="text" class="form-control" name="album" required>
+    <label for="tipus">tipus</label>
+    <input type="text" class="form-control" name="tipus" required>
   </div>
   <div class="form-group">
-    <label for="date">Data Concert</label>
-    <input type="text" class="form-control" name="date" required>
+    <label for="seient">seient de espectacle</label>
+    <input type="text" class="form-control" name="tipus" required>
   </div>
   <div class="form-group">
-    <label for="city">Ciutat</label>
-    <input type="text" class="form-control" name="city" >
+    <label for="vip">VIP</label>
+    <input type="text" class="form-control" name="vip" >
   </div>
   <div class="form-group">
     <label for="preu">Preu</label>
@@ -100,7 +99,7 @@
   </div><!-- /.modal -->
   
 
-<?php include "php/tabla.php"; ?>
+<?php include "tabla.php"; ?>
 </div>
 </div>
 </div>

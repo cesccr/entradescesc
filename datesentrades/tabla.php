@@ -3,29 +3,29 @@
 include "conexion.php";
 
 $user_id=null;
-$sql1= "select * from artistes";
+$sql1= "select * from month";
 $query = $con->query($sql1);
 ?>
 
 <?php
       $per_page = 10;
-      $result = mysqli_query($con, "SELECT COUNT(*) AS count FROM artistes");
+      $result = mysqli_query($con, "SELECT COUNT(*) AS count FROM month");
       $row = mysqli_fetch_assoc($result);
       $total_rows = $row['count'];
       $total_pages = ceil($total_rows / $per_page);
       $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
       $offset = ($current_page - 1) * $per_page;
-      $sql = "SELECT * FROM artistes LIMIT $offset, $per_page";
+      $sql = "SELECT * FROM month LIMIT $offset, $per_page";
       $result = mysqli_query($con, $sql);
       ?>
       <table class="table table-striped">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Artista</th>
-            <th>Album</th>
-            <th>Data Concert</th>
-            <th>Ciutat</th>
+            <th>Mes del espectacle</th>
+            <th>Tipus</th>
+            <th>Seient</th>
+            <th>VIP</th>
             <th>Preu</th>
           </tr>
         </thead>
@@ -35,20 +35,20 @@ $query = $con->query($sql1);
           ?>
             <tr>
               <td><?php echo $row['name']; ?></td>
-              <td><?php echo $row['album']; ?></td>
-              <td><?php echo $row['date']; ?></td>
-              <td><?php echo $row['city']; ?></td>
+              <td><?php echo $row['tipus']; ?></td>
+              <td><?php echo $row['seient']; ?></td>
+              <td><?php echo $row['vip']; ?></td>
               <td><?php echo $row['preu']; ?></td>
               <td style="width:220px;">
-		<a href="./editar.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-warning">Editar</a>
+		<a href="actualizar.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-warning">Editar</a>
 		<a href="#" id="del-<?php echo $row["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
-		<a href="./visualitzar.php" class="btn btn-info">Veure</a>
+		<a href="../visualitzar.php" class="btn btn-info">Veure</a>
 		<script>
 		$("#del-"+<?php echo $row["id"];?>).click(function(e){
 			e.preventDefault();
 			p = confirm("Estas segur?");
 			if(p){
-				window.location="./php/eliminar.php?id="+<?php echo $row["id"];?>;
+				window.location="eliminar.php?id="+<?php echo $row["id"];?>;
 
 			}
 
